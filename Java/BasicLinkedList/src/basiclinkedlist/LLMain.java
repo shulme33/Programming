@@ -20,10 +20,12 @@ public class LLMain {
         System.out.println("Creating Linked List...");
         
         //Initialize the linked list
-        LinkedList list1 = new LinkedList(new int[] {2,4,6,8,10});
+        LinkedList list1 = new LinkedList();
+        list1.unorderedInsert(new int[] {2,4,6,8,10});
         list1.printList();
         
-        LinkedList list2 = new LinkedList(new int[] {1,2,3,4,5});
+        LinkedList list2 = new LinkedList();
+        list2.orderedInsert(new int[] {2,5,6,1,3,0,7,8,-1,10});
         list2.printList();
     }
     

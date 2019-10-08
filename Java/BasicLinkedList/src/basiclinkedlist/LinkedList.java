@@ -14,7 +14,11 @@ public class LinkedList {
     public Node head;
     public Node tail;
     
-    public LinkedList(int[] initialValues){
+    public LinkedList(){
+        
+    }
+    
+    public void unorderedInsert(int[] initialValues){   //Will insert into list in the order the numbers appear in the array
         for(int i = 0; i < initialValues.length; i++) {
             Node newNode = new Node(null, null, initialValues[i]);
             if(head == null && tail == null){
@@ -25,6 +29,29 @@ public class LinkedList {
                 tail.next = newNode ;
                 tail = newNode;
             }
+        }
+    }
+    
+    public void orderedInsert(int[] initialValues){ //Will insert into linked list from largest to smallest
+        for(int i = 0; i < initialValues.length; i++){
+            Node newNode = new Node(null, null, initialValues[i]);
+            Node currentNode = head;
+            if(head == null){
+                head = newNode;
+            }else if(initialValues[i] < head.value){
+                newNode.next = currentNode;
+                head = newNode;
+            }else{
+                while(currentNode.next != null && currentNode.next.value < initialValues[i] && currentNode.value < initialValues[i]){
+                    currentNode = currentNode.next;
+                }
+                System.out.println("Adding: " + initialValues[i] + ", " + currentNode.value);
+                currentNode.next = newNode;
+                newNode.prev = currentNode;
+            }
+            
+            printList();
+            System.out.println("");
         }
     }
     
