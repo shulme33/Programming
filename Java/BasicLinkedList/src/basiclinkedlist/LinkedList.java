@@ -21,19 +21,19 @@ public class LinkedList {
                 head = newNode;
                 tail = newNode;
             }else{
-                newNode.setPrev(tail);
-                tail.setNext(newNode);
+                newNode.prev = tail;
+                tail.next = newNode ;
                 tail = newNode;
             }
         }
     }
     
-    public void printList(){
-        //Print the linked list
+    public void printList(){    //Print the linked list
         Node currentNode = head;
         while (currentNode != null){            
-            System.out.println(currentNode.getValue());
+            System.out.print(currentNode.value + ",");
             currentNode = currentNode.next;
         }
+        System.out.print("\n");
     }
 }

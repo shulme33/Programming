@@ -21,7 +21,10 @@ public class LLMain {
         
         //Initialize the linked list
         LinkedList list1 = new LinkedList(new int[] {2,4,6,8,10});
+        list1.printList();
+        
         LinkedList list2 = new LinkedList(new int[] {1,2,3,4,5});
+        list2.printList();
     }
     
     
