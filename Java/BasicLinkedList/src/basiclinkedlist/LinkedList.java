@@ -18,42 +18,117 @@ public class LinkedList {
         
     }
     
-    public void unorderedInsert(int[] initialValues){   //Will insert into list in the order the numbers appear in the array
+    public void createListUnordered(int[] initialValues){
         for(int i = 0; i < initialValues.length; i++) {
-            Node newNode = new Node(null, null, initialValues[i]);
-            if(head == null && tail == null){
-                head = newNode;
-                tail = newNode;
-            }else{
-                newNode.prev = tail;
-                tail.next = newNode ;
-                tail = newNode;
+            unorderedInsert(initialValues[i]);
+        }
+    }
+    
+    public void createListOrdered(int[] initialValues, int orderFunction){
+        for(int i = 0; i < initialValues.length; i++) {
+            switch(orderFunction){
+                case 1:
+                    orderedInsert1(initialValues[i]);
+                    break;
+                case 2:
+                    orderedInsert2(initialValues[i]);
+                    break;
             }
         }
     }
     
-    public void orderedInsert(int[] initialValues){ //Will insert into linked list from largest to smallest
-        for(int i = 0; i < initialValues.length; i++){
-            Node newNode = new Node(null, null, initialValues[i]);
-            Node currentNode = head;
-            if(head == null){
-                head = newNode;
-            }else if(initialValues[i] < head.value){
-                newNode.next = currentNode;
-                head = newNode;
-            }else{
-                while(currentNode.next != null && currentNode.next.value < initialValues[i] && currentNode.value < initialValues[i]){
-                    currentNode = currentNode.next;
-                }
-                System.out.println("Adding: " + initialValues[i] + ", " + currentNode.value);
-                currentNode.next = newNode;
-                newNode.prev = currentNode;
-            }
-            
-            printList();
-            System.out.println("");
+    public void unorderedInsert(int value){   //Will insert into list in the order the numbers appear in the array
+        Node newNode = new Node(null, null, value);
+        if(head == null && tail == null){
+            head = newNode;
+            tail = newNode;
+        }else{
+            newNode.prev = tail;
+            tail.next = newNode ;
+            tail = newNode;
         }
     }
+    
+    public void orderedInsert1(int value){ //Will insert into linked list from largest to smallest
+        Node newNode = new Node(null, null, value);
+        Node current = head;
+        if(current == null){   //First node in the list'
+            head = newNode;
+            tail = newNode;
+        }else{
+            boolean valueAdded = false;
+            while (!valueAdded){
+                if(newNode.value < current.value && head == current){ //Adding at beginning
+                    newNode.next = current;
+                    current.prev = newNode;
+                    head = newNode;
+                    valueAdded = true;
+                }else if(newNode.value >= current.value && tail == current){ //Adding to the end
+                    current.next = newNode;
+                    newNode.prev = current;
+                    tail = newNode;
+                    valueAdded = true;
+                }else if(newNode.value < current.value){ //Adding in the middle
+                    newNode.next = current;
+                    current.prev.next = newNode;
+                    newNode.prev = current.prev;
+                    current.prev = newNode;
+                    valueAdded = true;
+                }else{  //Nothing to do, move to the next one
+                    current = current.next;
+                }
+            }
+        }
+    }
+    
+    public void orderedInsert2(int value){ //Will insert into linked list from largest to smallest
+        Node newNode = new Node(null, null, value);
+        Node current = head;
+        if(current == null){   //First node in the list'
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+        while (newNode.next == null && newNode.prev == null){
+            if(newNode.value < current.value && head == current){ //Adding at beginning
+                newNode.next = current;
+                current.prev = newNode;
+                head = newNode;
+            }else if(newNode.value >= current.value && tail == current){ //Adding to the end
+                current.next = newNode;
+                newNode.prev = current;
+                tail = newNode;
+            }else if(newNode.value < current.value){ //Adding in the middle
+                newNode.next = current;
+                current.prev.next = newNode;
+                newNode.prev = current.prev;
+                current.prev = newNode;
+            }else{  //Nothing to do, move to the next one
+                current = current.next;
+            }
+        }
+    }
+    
+    public void randomPopulateArray(int[] array){
+        for(int i = 0; i < array.length; i++){
+            array[i] = (int)(Math.random()*array.length*2) - array.length;   //Random #'s between -5000 and 5000
+        }
+    }
+    
+    public boolean testSort(){
+        Node current = head;
+        
+        while(current.next != null){
+            if(current.value > current.next.value){
+                return false;
+            }
+            current = current.next;
+        }
+        return true;
+    }
+    
+    
+    
     
     public void printList(){    //Print the linked list
         Node currentNode = head;

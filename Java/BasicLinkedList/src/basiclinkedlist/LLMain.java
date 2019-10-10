@@ -20,13 +20,23 @@ public class LLMain {
         System.out.println("Creating Linked List...");
         
         //Initialize the linked list
-        LinkedList list1 = new LinkedList();
-        list1.unorderedInsert(new int[] {2,4,6,8,10});
-        list1.printList();
+//        LinkedList list1 = new LinkedList();
+//        System.out.println("\nUn-Ordered:");
+//        list1.createListUnordered(new int[] {2,4,6,8,10});
+//        list1.printList();
         
         LinkedList list2 = new LinkedList();
-        list2.orderedInsert(new int[] {2,5,6,1,3,0,7,8,-1,10});
-        list2.printList();
+        System.out.println("\nOrdered Improved:");
+        int[] array2 = new int[100000];
+        list2.randomPopulateArray(array2);
+        System.out.println("Array Created.");
+        list2.createListOrdered(array2, 2);
+        System.out.println("Test was successful: " + list2.testSort());
+        
+//        LinkedList list3 = new LinkedList();
+//        System.out.println("\nOrdered 2:");
+//        list3.createListOrdered(new int[] {2,5,6,13,5,40,7,1,-5,-10,1,3,0,0,0,7,8,-1,10}, 2);
+//        list3.printList();
     }
     
     
