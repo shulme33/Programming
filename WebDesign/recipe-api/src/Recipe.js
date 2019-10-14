@@ -1,6 +1,5 @@
 import React from "react";
 import recipeStyle from "./recipe.module.css";
-import { tsPropertySignature } from "@babel/types";
 
 const Recipe = ({ title, calories, image, ingredients }) => {
   return (
