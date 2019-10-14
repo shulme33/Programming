@@ -78,7 +78,7 @@ get_encoded_values(node_list[0], "")        # Recursive algorithm to find encode
 encoded_binary = encode(text_to_compress)   # Get binary equivalent
 
 print("\nEncoded Binary:")
-print(encoded_binary)                       #Encode text to binary
+print(encoded_binary)                       # Encode text to binary
 
 print("\nDecoded Text:")
 print(decode(encoded_binary, node_list[0])) # Decode our binary
