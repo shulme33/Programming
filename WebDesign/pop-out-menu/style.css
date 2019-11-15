@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(87, 189, 130);
+  transition: background 0.5s ease;
+  display: block;
+}
+
+/* The navbar at the top of the screen*/
+.nav-bar {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: red;
+
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newcolor {
+  color: #0f0 !important;
+}
+
+.left-menu {
+  display: flex;
+  width: 250px;
+  height: 100%;
+  background-color: gray;
+}
+
+.main-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: blue;
+}
+
+div.menu-inactive {
+  opacity: 1;
+  pointer-events: none;
+  transform: translate(-100%) scale(0, 1);
+}
+
+div.menu-active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(0) scale(1, 1);
+}
+
+.left-menu.hover {
+  background-color: green;
+}
+
+@keyframes make-menu-invisible {
+  0% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  100% {
+    transform: translate(-100%, 0) scale(0, 1);
+  }
+}
+
+@keyframes make-menu-visible {
+  0% {
+    transform: translate(-100%, 0) scale(0, 1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+}
