@@ -1,8 +1,8 @@
-##Installation
+## Installation
 
 Download Python 3 from [Python.org](https://www.python.org/downloads/)
 
-##To Run
+## To Run
 
 In the terminal, type:
 
