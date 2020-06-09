@@ -21,7 +21,7 @@
 #
 
 class StringChar:
-    def __init__(self):
+    def __init__(self, char, count):
         self.char = ""
         self.count = 0
 
@@ -31,9 +31,10 @@ class StringChar:
     def downCount():
         self.count = self.count - 1
 
+
 class HashTable:
     def __init__(self):
-        self.table = [StringChar()] * 128   #Assume ASCII
+        self.table = [None] * 128   #Assume ASCII
 
     def determine_index(self, new_char):    #Assume ASCII
         index = ord(new_char)
@@ -41,6 +42,14 @@ class HashTable:
     def insert_char(self, char):
         index = ord(new_char)
         #If already in table, add +1. If not, add the new character.
+        if self.table[index] == None:   #This is a fresh index
+            self.table[index] = StringChar(char, 1)
+        else    #A character already exists here
+            self.table[index].count += 1
+
+    def print_hash(self):
+        for i in self.table:
+            print(i.char)
 
 
 def is_permutation_dict(str1, str2):
@@ -49,8 +58,8 @@ def is_permutation_dict(str1, str2):
     if len(str1) != len(str2):
         return not_perm
 
-    hash =  HashTable(2*len(str1))   #Init list with length twice that of the length of the strings
-    print(hash)
+    hash =  HashTable()   #Init list with length twice that of the length of the strings
+    hash.print_hash()
 
     return is_perm
 
