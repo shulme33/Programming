@@ -22,8 +22,8 @@
 
 class StringChar:
     def __init__(self, char, count):
-        self.char = ""
-        self.count = 0
+        self.char = char
+        self.count = count
 
     def upCount():
         self.count = self.count + 1
@@ -35,21 +35,50 @@ class StringChar:
 class HashTable:
     def __init__(self):
         self.table = [None] * 128   #Assume ASCII
+        self.num_characters = 0
 
     def determine_index(self, new_char):    #Assume ASCII
         index = ord(new_char)
 
     def insert_char(self, char):
-        index = ord(new_char)
+        index = ord(char)
         #If already in table, add +1. If not, add the new character.
         if self.table[index] == None:   #This is a fresh index
+            self.num_characters += 1
             self.table[index] = StringChar(char, 1)
-        else    #A character already exists here
+        else:    #A character already exists here
             self.table[index].count += 1
+
+    def insert_string(self, str):
+        for char in str:
+            self.insert_char(char)
 
     def print_hash(self):
         for i in self.table:
-            print(i.char)
+            if i == None:
+                print("None")
+            else:
+                print(i.char + " >> " + str(i.count))
+
+    def compare_char_for_permutation(self, char):
+        #If at a new index, count gets below 0, or num_characters gets below 0, then this is not a permutation
+        index = ord(char)
+        if self.table[index] == None:  # New index. This char was not in the original string
+            return False
+        else:  # A character already exists here
+            self.table[index].count -= 1
+            if self.table[index].count == 0:
+                self.num_characters -= 1
+                self.table[index] = None
+            if self.num_characters < 0:
+                return False
+        return True
+
+    def compare_string_for_permutation(self, str):
+        for char in str:
+            if self.compare_char_for_permutation(char) == False:
+                return False
+        return True
 
 
 def is_permutation_dict(str1, str2):
@@ -59,9 +88,13 @@ def is_permutation_dict(str1, str2):
         return not_perm
 
     hash =  HashTable()   #Init list with length twice that of the length of the strings
-    hash.print_hash()
-
-    return is_perm
+    hash.insert_string(str1)
+    print(hash.num_characters)
+    is_permutation = hash.compare_string_for_permutation(str2)
+    if is_permutation:
+        return is_perm
+    else:
+        return not_perm
 
 
 
@@ -78,7 +111,7 @@ def check_permutations(str1, str2, alg):
     elif alg == "Dict":
         print("   Dictionary Alg: " + is_permutation_dict(str1, str2))
 
-compare_str1 = "abbcccdddd"
+compare_str1 = "abbccccdddd"
 compare_str2 = "abcdbcdcdd"
 print("\nComparing " + compare_str1 + " >> " + compare_str2)
 check_permutations(compare_str1, compare_str2, "Dict")
