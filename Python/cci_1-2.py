@@ -8,16 +8,14 @@
 #       1.) The simple answer is to sort the strings and then check them one letter at a time. This could be done in
 #       O(nlogn) for the sort and O(n) for the comparison. Therefore, the overall runtime is O(nlogn)
 #
-#       2.) The quicker implementation is to use a dictionary/hashtable. For each string add the different characters
-#       to the dictionary. For the first, you will just be adding them. For the second, we will be checking to see
-#       if the chracter in question is already in the dictionary. Each time we insert into the string during the inital add,
-#       we will update each entry to show the number of letters of that type that we have seen so far. For example, if
-#       we are comparing the string "abbcccdddd" to the string "ddddcccbba", then we will initially add the first string
-#       to the dictionary and will save the frequency of that chracter. The dictionry will contain 4 entries (a:1), (b:2),
-#       (c:3), (d:4). Then when we add entries from the second string, we will count down these values. Each time we add
-#       a "d" from the second string, we will count the (d:4) tuble down by one, i.e. (d:3)...(d:2). Once a tuple hits a count
-#       of 0, we will remove it from a count of overall characters seen in the first string. That way, we know how many
-#       different characters still have unmatched entries as we go through the 2nd string
+#       2.) The quicker implementation is to use a dictionary/hashtable. Below is an example of this implementation.
+#       It involves a hash table that is made up of 128 indexes where the index holds a "count" value. Each index represents
+#       and ASCII character and each "count" represents the total number of times that that character has been seen in
+#       String 1. We go through String 1 and add all the characters to the string. As we do this, we increase the
+#       num_characters field by 1 for each new character we see. Then we go through String 2 and delete 1 from the count
+#       value for each character that we see. When we hit 0, we remove one from the num_character variable. If we never
+#       see a new character in String 2 and the num_characters value is 0 at the end, then the strings are permutations
+#       of one another. This algorithm involves traversing each string once. Therefore the runtime is O(2n) = O(n)
 #
 
 class StringChar:
@@ -53,13 +51,6 @@ class HashTable:
         for char in str:
             self.insert_char(char)
 
-    def print_hash(self):
-        for i in self.table:
-            if i == None:
-                print("None")
-            else:
-                print(i.char + " >> " + str(i.count))
-
     def compare_char_for_permutation(self, char):
         #If at a new index, count gets below 0, or num_characters gets below 0, then this is not a permutation
         index = ord(char)
@@ -74,7 +65,7 @@ class HashTable:
                 return False
         return True
 
-    def compare_string_for_permutation(self, str):
+    def second_string_is_permutation(self, str):
         for char in str:
             if self.compare_char_for_permutation(char) == False:
                 return False
@@ -82,37 +73,45 @@ class HashTable:
 
 
 def is_permutation_dict(str1, str2):
-    not_perm = "Not Permutation"
-    is_perm = "Is Permutation"
     if len(str1) != len(str2):
-        return not_perm
+        return False
 
     hash =  HashTable()   #Init list with length twice that of the length of the strings
     hash.insert_string(str1)
-    print(hash.num_characters)
-    is_permutation = hash.compare_string_for_permutation(str2)
-    if is_permutation:
-        return is_perm
-    else:
-        return not_perm
-
+    return hash.second_string_is_permutation(str2)
 
 
 def is_permutation_sorted(str1, str2):
     sort_str1 = sorted(str1)    # O(nlogn)
     sort_str2 = sorted(str2)    # O(nlogn)
     if sort_str1 == sort_str2:
-        return "Is Permutation"
-    return "Not Permutation"
+        return True
+    return False
 
-def check_permutations(str1, str2, alg):
-    if alg == "Sort":
-        print("   Sorted Algorithm: " + is_permutation_sorted(str1, str2))
-    elif alg == "Dict":
-        print("   Dictionary Alg: " + is_permutation_dict(str1, str2))
+def check_permutations(use_dict):
+    str1 = input("Enter the first string: ")
+    str2 = input("Enter the second string: ")
+    is_perm = False
+    if not use_dict:
+        is_perm = is_permutation_sorted(str1, str2)
+    else:
+        is_perm = is_permutation_dict(str1, str2)
 
-compare_str1 = "abbccccdddd"
-compare_str2 = "abcdbcdcdd"
-print("\nComparing " + compare_str1 + " >> " + compare_str2)
-check_permutations(compare_str1, compare_str2, "Dict")
-print("\n")
+    print("\nThese two strings ARE permutations" if is_perm else "\nThese are NOT permutations")
+
+#compare_str1 = "kljioilk5498u0jvc#@$%^Erlkj32ijodf$%^SDEFSeijhjel3"
+#compare_str2 = "jdf$%^SDEFoil2ijo5jel3kvc#@eijhk498u0Silj$%^Erlkj3"
+
+print("\n\nThis program will take two strings and determine if they are permutations of one another. ")
+print("There are two different algorithms used to do this. Choose an algorithm from the following by entering 1 or 2.")
+print("     1.) Sorting Strings First - O(nlogn)")
+print("     2.) Using A Dictionary/Hash Table - O(n)")
+bad_answer = True
+while bad_answer:
+    answer = input("Select an algorithm by typing 1 or 2: ")
+    if answer == "1":
+        bad_answer = False
+        check_permutations(False)   #Sorting
+    elif answer == "2":
+        bad_answer = False
+        check_permutations(True)    #Dictionary

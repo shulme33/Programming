@@ -36,42 +36,65 @@ def contains_duplicates_dict(str):  # O(n)
     dict = {}
     for char in str:
         if char in dict:
-            return dup_exist;
+            return True
         else:
             dict[char] = 1
-    return no_dup
+    return False
 
 def contains_duplicates_bf(str):    # O(n^2)
     for i in range(0, len(str)):
         for j in range(i, len(str)):
             if i != j and str[i] == str[j]:
-                return dup_exist
-    return no_dup
+                return True
+    return False
 
 def contains_duplicates_sort(str): #O(nlogn + n) = O(nlogn)
     str_sorted = ''.join(sorted(str)) #O(n) for .join()
     for i in range(1, len(str_sorted)):
         if str_sorted[i] == str_sorted[i-1]:
-            return dup_exist
-    return no_dup
+            return True
+    return False
 
-def test_for_duplicates(type, test_string):
+def test_for_duplicates(type):
+    test_string = input("Enter a string: ")
+    duplicates_exist = False
     if type == "D": # Dictionary
-        print("  " + test_string + " >> " + contains_duplicates_dict(test_string))
+        duplicates_exist = contains_duplicates_dict(test_string)
     if type == "BF": # Brute Force
-        print("  " + test_string + " >> " + contains_duplicates_bf(test_string))
+        duplicates_exist = contains_duplicates_bf(test_string)
     if type == "S": # Sorted
-        print("  " + test_string + " >> " + contains_duplicates_sort(test_string))
+        duplicates_exist = contains_duplicates_sort(test_string)
+        
+    print("\nDuplicate characters DO exist" if duplicates_exist else "\nDuplicate characters do NOT exist")
+    
 
 
-print("\nUsing a dictionary:")
-test_for_duplicates("D", string_with_duplicates)
-test_for_duplicates("D", string_no_duplicates)
+#print("\nUsing a dictionary:")
+#test_for_duplicates("D", string_with_duplicates)
+#test_for_duplicates("D", string_no_duplicates)
 
-print("\nUsing a brute force approach:")
-test_for_duplicates("BF", string_with_duplicates)
-test_for_duplicates("BF", string_no_duplicates)
+#print("\nUsing a brute force approach:")
+#test_for_duplicates("BF", string_with_duplicates)
+#test_for_duplicates("BF", string_no_duplicates)
 
-print("\nSorting then iterating:")
-test_for_duplicates("S", string_with_duplicates)
-test_for_duplicates("S", string_no_duplicates)
+#print("\nSorting then iterating:")
+#test_for_duplicates("S", string_with_duplicates)
+#test_for_duplicates("S", string_no_duplicates)
+
+print("\n\nThis program will take a string and determine if there are duplicate characters in the string ")
+print("There are three different algorithms available to do this. Choose an algorithm from the following by entering 1, 2, or 3.")
+print("     1.) Using A Dictionary - O(n)")
+print("     2.) Using A Brute Force Approach - O(n^2)")
+print("     3.) Sorting Than Iterating - O(nlogn)")
+bad_answer = True
+while bad_answer:
+    answer = input("\nSelect an algorithm by typing 1, 2, or 3: ")
+    if answer == "1":
+        bad_answer = False
+        test_for_duplicates("D")   #Dictionary
+    elif answer == "2":
+        bad_answer = False
+        test_for_duplicates("BF")    #Brute Force
+    elif answer == "3":
+        bad_answer = False
+        test_for_duplicates("S")  #Sorting
