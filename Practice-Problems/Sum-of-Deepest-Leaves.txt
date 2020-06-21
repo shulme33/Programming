@@ -1,0 +1,55 @@
+
+'''
+Given a binary tree, return the sum of values of its deepest leaves.
+ 
+
+Example 1:
+
+  
+  			1
+          /   \           
+    	2		3
+       / \       \         
+      4   5       6
+     /             \
+    7				8
+
+deque = []
+current = None
+sum = 15
+
+    
+
+Input: root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+Output: 15
+
+'''
+
+from collections import deque
+
+def deepest_leaf_total(root):
+  if not root: return -1
+  
+  q = deque()
+  q.append(None)
+  q.append(root)
+  
+  while q:
+    
+    current = q.popLeft()
+    
+    # if we reach the "None" 
+    if not current:
+      if not q:
+        return level_sum
+      else
+      	level_sum = 0
+        q.append(None)
+        continue
+        
+    level_sum += current.val
+    
+    if current.left: q.append(current.left)
+    if current.right: q.append(current.right)
+
+  return level_sum

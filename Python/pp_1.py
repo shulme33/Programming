@@ -100,6 +100,8 @@ lake = [
         ['x','o','o','o','o','o','o','o','o','o'],
 ]
 
+peninsulas = []
+
 def print_lake():
     for row in lake:
         print(row)
@@ -120,21 +122,50 @@ def check_bottom(x, y):
     if y == len(lake): return [-1, -1]
     else: return [x, y+1]
 
-def check_surroundings(x, y):
+def is_symbol(x, y, symbol):
+    if y >= 0 and x >= 0 and y < len(lake) and x < len(lake[0]) and lake[x][y] == symbol:
+        return True
+    return False
+
+
+def check_surroundings(x, y, island_num, check_val):
     #Top
     top_x, top_y = check_top(x, y)
-    if top_y != -1 and lake[top_x][top_y] == "x":
-        lake[top_x][top_y] = "%"
-        check_surroundings(top_x, top_y)
+    if is_symbol(top_x, top_y, check_val):
+        lake[top_x][top_y] = island_num
+        check_surroundings(top_x, top_y, island_num, check_val)
+
+    #Right
+    right_x, right_y = check_right(x, y)
+    if is_symbol(right_x, right_y, check_val):
+        lake[right_x][right_y] = island_num
+        check_surroundings(right_x, right_y, island_num, check_val)
+
+    #Bottom
+    bottom_x, bottom_y = check_bottom(x, y)
+    if is_symbol(bottom_x, bottom_y, check_val):
+        lake[bottom_x][bottom_y] = island_num
+        check_surroundings(bottom_x, bottom_y, island_num, check_val)
+
+    # Left
+    left_x, left_y = check_left(x, y)
+    if is_symbol(left_x, left_y, check_val):
+        lake[left_x][left_y] = island_num
+        check_surroundings(left_x, left_y, island_num, check_val)
 
 def switch_to_island():
+    value = 0
+    island_num = 1
     for i, row in enumerate(lake):
-        for j, val in enumerate(row):
+        for j, val in enumerate(lake[i]):
             if val == "o":
-                lake[i][j] = ' '
+                lake[i][j] = " "
             elif val == 'x':
-                lake[j][i] = "%"
-                check_surroundings(j, i)
+                lake[i][j] = str(island_num)
+                check_surroundings(j, i, str(island_num), 'x')
+                island_num += 1
+                print_lake()
+                return
     print_lake()
 
 switch_to_island()
