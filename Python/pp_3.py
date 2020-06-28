@@ -96,3 +96,22 @@ Samuel Hulme
 
 
 """
+
+
+def longest_unique_substring(test_string, longest_substring=0, char_seen={}):
+    p_slow = p_fast = 0
+    while p_fast < len(test_string):
+        if test_string[p_fast] not in char_seen:
+            char_seen[test_string[p_fast]] = 1
+            p_fast += 1
+            longest_substring = max(longest_substring, p_fast - p_slow)
+        else:
+            char_seen.pop(test_string[p_slow])
+            p_slow += 1
+    return longest_substring
+
+
+print("\nThis program will take in a string and return the length of the longest substring that does not contain")
+print("duplicate characters. It uses a version of the sliding window approach to do so in O(n) time.")
+input_string = input("\nPlease enter a string: ")
+print("\nThe longest substring in \"" + input_string + "\" is " + str(longest_unique_substring(input_string)) + " character(s) long.")
