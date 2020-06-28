@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03d8907-cab9-4dad-bf29-09ff2566d4c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pp_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/pp_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,57 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.pp_1">
+    <configuration name="pp_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pp_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pp_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pp_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.pp_1" />
+        <item itemvalue="Python.pp_2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,9 +96,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="141" y="349" key="SettingsEditor" timestamp="1591917568173">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="807" height="1273" key="GridCell.Tab.0.bottom" timestamp="1593295522366">
+      <screen x="-3840" y="0" width="2560" height="1400" />
     </state>
+    <state width="807" height="1273" key="GridCell.Tab.0.bottom/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593295522366" />
+    <state width="807" height="1273" key="GridCell.Tab.0.center" timestamp="1593295522364">
+      <screen x="-3840" y="0" width="2560" height="1400" />
+    </state>
+    <state width="807" height="1273" key="GridCell.Tab.0.center/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593295522364" />
+    <state width="807" height="1273" key="GridCell.Tab.0.left" timestamp="1593295522364">
+      <screen x="-3840" y="0" width="2560" height="1400" />
+    </state>
+    <state width="807" height="1273" key="GridCell.Tab.0.left/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593295522364" />
+    <state width="807" height="1273" key="GridCell.Tab.0.right" timestamp="1593295522365">
+      <screen x="-3840" y="0" width="2560" height="1400" />
+    </state>
+    <state width="807" height="1273" key="GridCell.Tab.0.right/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593295522365" />
+    <state x="-2993" y="286" key="SettingsEditor" timestamp="1593287625425">
+      <screen x="-3840" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-2993" y="286" key="SettingsEditor/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593287625425" />
     <state x="141" y="349" key="SettingsEditor/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1591917568173" />
+    <state x="-2897" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1593294789149">
+      <screen x="-3840" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-2897" y="315" width="672" height="678" key="search.everywhere.popup/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593294789149" />
   </component>
 </project>
