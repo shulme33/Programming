@@ -72,5 +72,5 @@ print("\n     2.) If divisible by 2, divide by 2")
 print("\n     3.) If divisible by 3, divide by 3")
 starting_num = int(input("\nEnter a number: "))
 
-#print("\nUsing memoization, this number can be reduced to 1 in " + str(shortest_path_memoization(starting_num)) + " steps:")
+print("\nUsing memoization, this number can be reduced to 1 in " + str(shortest_path_memoization(starting_num)) + " steps:")
 print("\nUsing tabulation, this number can be reduced to 1 in " + str(shortest_path_tabulation(starting_num)) + " steps:")
