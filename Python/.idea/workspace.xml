@@ -31,7 +31,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.lc_1">
+  <component name="RunManager" selected="Python.pp_7">
     <configuration name="cci_8-3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,27 +95,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pp_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pp_4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="pp_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,13 +116,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pp_7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pp_7.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pp_7" />
         <item itemvalue="Python.lc_1" />
         <item itemvalue="Python.cci_8-3" />
         <item itemvalue="Python.pp_5" />
         <item itemvalue="Python.pp_3" />
-        <item itemvalue="Python.pp_4" />
       </list>
     </recent_temporary>
   </component>
@@ -169,48 +169,56 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="406" y="65" key="#pp_3/0.0.1440.900@0.0.1440.900" timestamp="1594493668052" />
-    <state width="587" height="757" key="GridCell.Tab.0.bottom" timestamp="1596678829849">
-      <screen x="35" y="23" width="1405" height="877" />
+    <state width="772" height="937" key="GridCell.Tab.0.bottom" timestamp="1596913332832">
+      <screen x="38" y="23" width="1882" height="1057" />
     </state>
     <state width="1107" height="1273" key="GridCell.Tab.0.bottom/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593368081124" />
     <state width="1419" height="269" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1594494642550" />
     <state width="1379" height="196" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1594494536055" />
+    <state width="772" height="937" key="GridCell.Tab.0.bottom/248.1103.1440.877/38.23.1882.1057@38.23.1882.1057" timestamp="1596913332832" />
+    <state width="888" height="937" key="GridCell.Tab.0.bottom/248.1103.1440.877/39.23.1881.1057@39.23.1881.1057" timestamp="1596912384924" />
     <state width="586" height="937" key="GridCell.Tab.0.bottom/248.1103.1440.877/41.23.1879.1057@41.23.1879.1057" timestamp="1596546782304" />
     <state width="586" height="937" key="GridCell.Tab.0.bottom/248.1103.1440.877/45.23.1875.1057@45.23.1875.1057" timestamp="1596334043199" />
     <state width="786" height="937" key="GridCell.Tab.0.bottom/248.1103.1440.877/47.23.1873.1057@47.23.1873.1057" timestamp="1596330198819" />
     <state width="587" height="757" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1596678829849" />
     <state width="1374" height="184" key="GridCell.Tab.0.bottom/37.23.1403.877@37.23.1403.877" timestamp="1596322649120" />
     <state width="355" height="757" key="GridCell.Tab.0.bottom/43.23.1397.877@43.23.1397.877" timestamp="1596314617118" />
-    <state width="587" height="757" key="GridCell.Tab.0.center" timestamp="1596678829847">
-      <screen x="35" y="23" width="1405" height="877" />
+    <state width="772" height="937" key="GridCell.Tab.0.center" timestamp="1596913332831">
+      <screen x="38" y="23" width="1882" height="1057" />
     </state>
     <state width="1107" height="1273" key="GridCell.Tab.0.center/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593368081122" />
     <state width="1419" height="269" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1594494642549" />
     <state width="1379" height="196" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1594494536054" />
+    <state width="772" height="937" key="GridCell.Tab.0.center/248.1103.1440.877/38.23.1882.1057@38.23.1882.1057" timestamp="1596913332831" />
+    <state width="888" height="937" key="GridCell.Tab.0.center/248.1103.1440.877/39.23.1881.1057@39.23.1881.1057" timestamp="1596912384923" />
     <state width="586" height="937" key="GridCell.Tab.0.center/248.1103.1440.877/41.23.1879.1057@41.23.1879.1057" timestamp="1596546782302" />
     <state width="586" height="937" key="GridCell.Tab.0.center/248.1103.1440.877/45.23.1875.1057@45.23.1875.1057" timestamp="1596334043198" />
     <state width="786" height="937" key="GridCell.Tab.0.center/248.1103.1440.877/47.23.1873.1057@47.23.1873.1057" timestamp="1596330198818" />
     <state width="587" height="757" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1596678829847" />
     <state width="1374" height="184" key="GridCell.Tab.0.center/37.23.1403.877@37.23.1403.877" timestamp="1596322649119" />
     <state width="355" height="757" key="GridCell.Tab.0.center/43.23.1397.877@43.23.1397.877" timestamp="1596314617117" />
-    <state width="587" height="757" key="GridCell.Tab.0.left" timestamp="1596678829846">
-      <screen x="35" y="23" width="1405" height="877" />
+    <state width="772" height="937" key="GridCell.Tab.0.left" timestamp="1596913332830">
+      <screen x="38" y="23" width="1882" height="1057" />
     </state>
     <state width="1107" height="1273" key="GridCell.Tab.0.left/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593368081121" />
     <state width="1419" height="269" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1594494642548" />
     <state width="1379" height="196" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1594494536053" />
+    <state width="772" height="937" key="GridCell.Tab.0.left/248.1103.1440.877/38.23.1882.1057@38.23.1882.1057" timestamp="1596913332830" />
+    <state width="888" height="937" key="GridCell.Tab.0.left/248.1103.1440.877/39.23.1881.1057@39.23.1881.1057" timestamp="1596912384922" />
     <state width="586" height="937" key="GridCell.Tab.0.left/248.1103.1440.877/41.23.1879.1057@41.23.1879.1057" timestamp="1596546782301" />
     <state width="586" height="937" key="GridCell.Tab.0.left/248.1103.1440.877/45.23.1875.1057@45.23.1875.1057" timestamp="1596334043198" />
     <state width="786" height="937" key="GridCell.Tab.0.left/248.1103.1440.877/47.23.1873.1057@47.23.1873.1057" timestamp="1596330198817" />
     <state width="587" height="757" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1596678829846" />
     <state width="1374" height="184" key="GridCell.Tab.0.left/37.23.1403.877@37.23.1403.877" timestamp="1596322649118" />
     <state width="355" height="757" key="GridCell.Tab.0.left/43.23.1397.877@43.23.1397.877" timestamp="1596314617117" />
-    <state width="587" height="757" key="GridCell.Tab.0.right" timestamp="1596678829848">
-      <screen x="35" y="23" width="1405" height="877" />
+    <state width="772" height="937" key="GridCell.Tab.0.right" timestamp="1596913332832">
+      <screen x="38" y="23" width="1882" height="1057" />
     </state>
     <state width="1107" height="1273" key="GridCell.Tab.0.right/-3840.0.2560.1400/0.0.2560.1400@-3840.0.2560.1400" timestamp="1593368081123" />
     <state width="1419" height="269" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1594494642550" />
     <state width="1379" height="196" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1594494536055" />
+    <state width="772" height="937" key="GridCell.Tab.0.right/248.1103.1440.877/38.23.1882.1057@38.23.1882.1057" timestamp="1596913332832" />
+    <state width="888" height="937" key="GridCell.Tab.0.right/248.1103.1440.877/39.23.1881.1057@39.23.1881.1057" timestamp="1596912384923" />
     <state width="586" height="937" key="GridCell.Tab.0.right/248.1103.1440.877/41.23.1879.1057@41.23.1879.1057" timestamp="1596546782303" />
     <state width="586" height="937" key="GridCell.Tab.0.right/248.1103.1440.877/45.23.1875.1057@45.23.1875.1057" timestamp="1596334043199" />
     <state width="786" height="937" key="GridCell.Tab.0.right/248.1103.1440.877/47.23.1873.1057@47.23.1873.1057" timestamp="1596330198818" />
