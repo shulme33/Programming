@@ -94,7 +94,6 @@ class LRUCache:
         if key not in self.cache:
             return "Data not found"
         current = self.cache[key]
-        print(" -> " + current.prev.data)
         current.prev.next = current.next
         current.next.prev = current.prev
         current.prev = self.head
@@ -112,37 +111,29 @@ class LRUCache:
         print("\n")
 
 lru = LRUCache(4)
-#lru.write("a", "Data A")
-#lru.write("b", "Data B")
-#lru.write("c", "Data C")
-#lru.write("d", "Data D")
-#lru.write("e", "Data E")
-#lru.write("f", "Data F")
-#lru.write("g", "Data G")
-#lru.write("h", "Data H")
-#lru.write("i", "Data I")
-
-#lru.print_lru()
-
-
-#print("\nRead \"e\":" + lru.read("e"))
-#lru.print_lru()
+lru.write("a", "Data A")
+lru.write("b", "Data B")
+lru.write("c", "Data C")
+lru.write("d", "Data D")
 
 print("This program implements an LRU cache. From the list below, select either to read"
-      "of write data to and from the cache. Then, based on your answer and subsequent"
-      "data entry, the cache will be printed and will show the most recently and least"
-      "recently referenced data.")
+      "\nof write data to and from the cache. Then, based on your answer and subsequent"
+      "\ndata entry, the cache will be printed and will show the most recently and least"
+      "\nrecently referenced data.")
+lru.print_lru()
 
 user_selection = ""
 while user_selection != "quit":
     print("    r: Read data from the cache"
         "\n    w: Write data to the cache"
-          "quit: Quit program")
+        "\n    quit: Quit program")
     user_selection = input("Choose from the options above: ")
     if user_selection == "r":
-        print("    Read")
+        #print("    Read")
+        search_data = input("Enter data to search for in the cache: ")
+        print("Result: " + lru.read(search_data))
     elif user_selection == "w":
-        print("    Write")
+        #print("    Write")
         new_data = input("Enter data to add to the cache: ")
         new_key = input("Enter a unique key for this data: ")
         lru.write(new_key, new_data)
@@ -151,3 +142,4 @@ while user_selection != "quit":
         continue;
     else:
         print("\n\"" + user_selection + "\" is not a valid choice. Please choose again.")
+    print("\n")
